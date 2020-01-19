@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple Java Script Example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="style.css">    -->
+</head>
+
+<body>
+    <h1 style="text-align: center;">Simple A Web Application to Print an Birth Year Based on Age of an User!!</h1>
+    <center>
+        <form style="margin-top:100px;">
+            <input style="height: 30px; width: 300px;" type="number" name="number"
+                placeholder="Please Enter the age of an user" id="num" />
+            <input style="height: 35px;color: brown;" type="button" value="Find Year" id="button">
+            <!-- <button style="height: 35px;color: brown;" id="button">Find Year</button> -->
+            <center>
+                <p id="year">Year:</p>
+            </center>
+        </form>
+        
+    </center>
+    <script>
+        function calculate_year() {
+            var number = document.getElementById("num").value;
+            if (number == "" || number == 0) {
+                window.alert("Plesae enter the Correct age and Greater than 0:");
+                return;
+            }
+            var date = new Date().getFullYear();
+            var birth_year = number - date;
+            document.getElementById("year").style.display = "block";
+            document.getElementById("year").innerHTML = "Your Birth Year is:" + birth_year;
+            console.log(birth_year);
+        }
+
+        document.getElementById("year").style.display = "none";
+        document.getElementById("button").onclick = function () { calculate_year();
+        };
+    </script>
+</body>
+</html>
